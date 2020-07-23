@@ -1,0 +1,27 @@
+#parent {
+  background:tomato;
+  width:200px;
+  height: 150px;
+  position:relative;
+  text-align: center;
+  vertical-align: center;
+}
+
+#child{ background: #FFDE99;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+textarea {
+  min-height: 30vh;
+  min-width: 90vh;
+  display: block;
+  margin-top: 1.4rem;
+}
+#clear{
+  margin-top: 1.4rem;
+}
