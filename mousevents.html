@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html id="html">
+<head>
+	<meta charset="utf-8">
+	<title>Javascript</title>
+	<link rel="stylesheet" type="text/css" href="javascript.css">
+	<style type="text/css">
+		#parent {
+  			background:tomato;
+  			width:200px;
+  			height: 150px;
+  			position:relative;
+  			text-align: center;
+  			vertical-align: center;
+		}
+
+		#child	{ 
+			background: #FFDE99;
+  			width: 50%;
+  			height: 50%;
+  			position: absolute;
+  			left: 50%;
+  			top: 50%;
+  			transform: translate(-50%, -50%);
+		}
+
+		textarea {
+  			min-height: 30vh;
+  			min-width: 90vh;
+ 			display: block;
+  			margin-top: 1.4rem;
+		}
+		
+		#clear{
+  			margin-top: 1.4rem;
+		}
+	
+	</style>
+	</head>
+	
+
+	<body id="body">
+	
+
+		<div id="parent"> Parent
+			<div id="child">Child</div>
+		</div>
+			
+			<textarea id="text"></textarea>
+			<button id="clear">Clear</button>
+		
+
+		<script>
+
+
+const parent = document.getElementById("parent");
+const child = document.getElementById("child");
+const text = document.getElementById("text");
+const clear = document.getElementById("clear");
+
+parent.addEventListener("mouseover" ,e => {
+	text.innerHTML += `Type:${e.type}, Target:${e.target.id}, Related Target:${e.relatedTarget.id}\n`;
+	text.scrollTop = text.scrollHeight;
+});
+
+
+parent.addEventListener("mouseout", e=> {
+	text.innerHTML += `Type:${e.type}, Target:${e.target.id}, Related Target:${e.relatedTarget.id}\n`;
+	text.scrollTop = text.scrollHeight;
+});
+
+
+
+parent.addEventListener("mouseenter" , e=> {
+	text.innerHTML += `Type:${e.type}, Target:${e.target.id}, Related Target:${e.relatedTarget.id}\n`;
+	text.scrollTop = text.scrollHeight;
+})
+
+child.addEventListener("mouseenter" , e=> {
+	text.innerHTML += `Type:${e.type}, Target:${e.target.id}, Related Target:${e.relatedTarget.id}\n`;
+	text.scrollTop = text.scrollHeight;
+})
+
+parent.addEventListener("mouseleave" , e => {
+	text.innerHTML += `Type:${e.type}, Target:${e.target.id}, Related Target:${e.relatedTarget.id}\n`
+	text.scrollTop = text.scrollHeight;
+});
+
+child.addEventListener("mouseleave" , e => {
+	text.innerHTML += `Type:${e.type}, Target:${e.target.id}, Related Target:${e.relatedTarget.id}\n`
+	text.scrollTop = text.scrollHeight;
+});
+
+
+
+
+// For Button
+
+clear.addEventListener("click" , () =>{
+	text.innerHTML = " ";
+	
+});
+
+
+
+
+
+
+
+		</script>
+
+
+</body>
+</html>
